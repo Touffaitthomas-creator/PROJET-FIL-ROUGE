@@ -1,0 +1,58 @@
+[build-system]
+requires = [
+    "setuptools==80.9.0",
+    "wheel==0.45.1",
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "projet-pv"
+version = "0.1.0"
+
+description = "Simulation photovoltaïque, stockage batterie et optimisation énergétique"
+
+readme = "README.md"
+
+requires-python = ">=3.11,<3.14"
+
+dependencies = [
+    "numpy==2.2.6",
+    "pandas==2.2.3",
+    "scipy==1.15.3",
+    "pvlib==0.13.0",
+    "requests==2.32.4",
+    "pydantic==2.11.7",
+    "pydantic-settings==2.10.1",
+    "matplotlib==3.10.3",
+]
+
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest==8.4.1",
+    "pytest-cov==6.2.1",
+    "ruff==0.12.3",
+]
+
+
+[tool.setuptools.packages.find]
+
+where = ["."]
+include = ["src*"]
+
+
+[tool.pytest.ini_options]
+
+testpaths = ["tests"]
+
+pythonpath = ["."]
+
+addopts = "-v"
+
+
+[tool.ruff]
+
+line-length = 88
+target-version = "py311"

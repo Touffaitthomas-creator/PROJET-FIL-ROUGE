@@ -1,0 +1,6 @@
+data/
+.env
+.env.example
+tests/
+.venv/
+.venv-wsl/
